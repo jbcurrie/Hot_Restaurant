@@ -1,10 +1,3 @@
-var tableLink = [
-    {
-    name: "example"
-}, 
-{
-    name: "something else"
-}
-]
+var tableLink = []
 
 module.exports = tableLink;
