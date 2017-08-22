@@ -63,7 +63,7 @@
 
     <footer class="footer">
       <div class="container">
-        <p><a href="/api/tables">API Table Link</a> | <a href="/api/waitlist">API Wait List</a> | <a href="https://github.com/afhaque/HotRestaurant">GitHub Repo</a></p>
+        <p><a href="/api/tableLink">API Table Link</a> | <a href="/api/waitList">API Wait List</a> | <a href="https://github.com/afhaque/HotRestaurant">GitHub Repo</a></p>
       </div>
     </footer>
 
@@ -73,3 +73,21 @@
 </html>
 
 <script type="text/javascript">
+
+$(".submit").on("click", function(event) {
+      var newReservation = {
+        customerName: $("#reserve-name").val().trim(),
+        phoneNumber: $("#reserve-phone").val().trim(),
+        customerEmail: $("#reserve-email").val().trim(),
+        customerID: $("#reserve-unique-id").val().trim()
+      };
+  $.post("/api/tableLink", newReservation)
+      .done(function(data) {
+        console.log(data);
+        alert("reservation logged")
+      })
+
+    });
+
+
+</script>
