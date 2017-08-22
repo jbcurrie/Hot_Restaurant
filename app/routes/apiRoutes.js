@@ -28,9 +28,11 @@ module.exports = function(app) {
         // return res.json(tableLink);
     });
 
-    app.post("api/tableLink", function(req,res){
+    app.post("/api/new", function(req,res){
+        
+        
         reservation.push(req.body)
-        res.json(true);
+        res.json(reservation);
     })
 }
 

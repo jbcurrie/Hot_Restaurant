@@ -81,8 +81,8 @@ $(".submit").on("click", function(event) {
         customerEmail: $("#reserve-email").val().trim(),
         customerID: $("#reserve-unique-id").val().trim()
       };
-  $.post("/api/tableLink", newReservation)
-      .done(function(data) {
+  $.post("/api/new", newReservation, function(data) {
+
         console.log(data);
         alert("reservation logged")
       })
